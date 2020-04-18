@@ -44,7 +44,7 @@ static void do_boot(struct boot_rsp *rsp) {
 }
 
 int main() {
-  SEGGER_RTT_Init();
+  //SEGGER_RTT_Init();
   InitClock();
 
 #if 1
@@ -66,6 +66,11 @@ int main() {
 
   MCUBOOT_LOG_ERR("Jumping to the first image slot");
 //  ZEPHYR_BOOT_LOG_STOP();
+
+  for(int i = 0; i < 65536; i++) {
+    asm("nop");
+  }
+
   do_boot(&rsp);
 
   MCUBOOT_LOG_ERR("Never should get here");

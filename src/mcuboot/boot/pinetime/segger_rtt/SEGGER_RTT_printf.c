@@ -513,6 +513,30 @@ int SEGGER_RTT_printf(unsigned BufferIndex, const char * sFormat, ...) {
   va_start(ParamList, sFormat);
   r = SEGGER_RTT_vprintf(BufferIndex, sFormat, &ParamList);
   va_end(ParamList);
+
+  for(int i = 0; i < 0x0000ffff; i++) {
+    asm("nop");
+  }
   return r;
 }
+
+#include <stdlib.h>
+#include <stdarg.h>
+#include <stdint-gcc.h>
+
+void log_printf(const char * sFormat, ...) {
+  uint32_t idx    = 0;
+  uint32_t processed;
+
+  va_list ParamList;
+  va_start(ParamList, sFormat);
+  do {
+    processed = SEGGER_RTT_printf(0, sFormat, &ParamList);
+    idx++;
+  }
+  while(processed == 0);
+  va_end(ParamList);
+}
+
+
 /*************************** End of file ****************************/

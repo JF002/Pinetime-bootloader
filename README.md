@@ -9,7 +9,7 @@ The memory map is defined as followed:
 
  - SCRATCH AREA : 0x50000 (size : 0x3000)
  - PRIMARY SLOT : 0x60000 (size : 0x3000)
- - SECONDARY SLOT : 0x70000 (size : 0x3000)
+ - SECONDARY SLOT : 0x70000 (size : 0x9000)
  
 This is completely arbitrary and does not reflect an actual use case (which will use the external SPI Flash as secondary).
 

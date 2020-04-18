@@ -18,10 +18,10 @@
 #define MCUBOOT_LOG_MODULE_DECLARE(domain)	LOG_MODULE_DECLARE(domain, CONFIG_MCUBOOT_LOG_LEVEL)
 #define MCUBOOT_LOG_MODULE_REGISTER(domain)	LOG_MODULE_REGISTER(domain, CONFIG_MCUBOOT_LOG_LEVEL)
 
-#define MCUBOOT_LOG_ERR(...) SEGGER_RTT_printf(0,__VA_ARGS__)
-#define MCUBOOT_LOG_WRN(...) SEGGER_RTT_printf(0,__VA_ARGS__)
-#define MCUBOOT_LOG_INF(...) SEGGER_RTT_printf(0,__VA_ARGS__)
-#define MCUBOOT_LOG_DBG(...) SEGGER_RTT_printf(0,__VA_ARGS__)
+#define MCUBOOT_LOG_ERR(...) /*SEGGER_RTT_printf(0, __VA_ARGS__)*/
+#define MCUBOOT_LOG_WRN(...) /*SEGGER_RTT_printf(0, __VA_ARGS__)*/
+#define MCUBOOT_LOG_INF(...) /*SEGGER_RTT_printf(0, __VA_ARGS__)*/
+#define MCUBOOT_LOG_DBG(...) /*SEGGER_RTT_printf(0, __VA_ARGS__)*/
 #define MCUBOOT_LOG_SIM(...) IGNORE(__VA_ARGS__)
 
 //#include <logging/log.h>

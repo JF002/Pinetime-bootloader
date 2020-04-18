@@ -83,6 +83,8 @@ list(APPEND SOURCE_FILES
   os.c
   flash_map_backend.c
   arm_cleanup.c
+  nrf52_nvmc.c
+  nrf52_nvmc.h
 )
 
 set(INCLUDE_FILES
